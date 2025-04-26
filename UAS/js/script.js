@@ -29,10 +29,10 @@ d3.csv("flight_dataset.csv").then(data => {
 function drawBarChart(data) {
   const svg = d3.select("#chart").append("svg")
     .attr("width", 600)
-    .attr("height", 450);
+    .attr("height", 500);
 
-  const margin = {top: 60, right: 20, bottom: 70, left: 60};
-  const width = 600 - margin.left - margin.right;
+  const margin = {top: 60, right: 20, bottom: 90, left: 60}; // Perbesar bottom untuk label X
+  const width = 600 - margin.left - margin.right ;
   const height = 450 - margin.top - margin.bottom;
 
   const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
@@ -74,6 +74,21 @@ function drawBarChart(data) {
     .attr("text-anchor", "middle")
     .style("font-size", "20px")
     .text("Rata-Rata Harga Tiket per Maskapai");
+
+  // Label X
+  svg.append("text")
+    .attr("x", 300)
+    .attr("y", 440)
+    .attr("text-anchor", "middle")
+    .text("Maskapai");
+
+  // Label Y
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -225)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .text("Harga Rata-Rata (Rupee)");
 }
 
 // --- PIE CHART: Distribusi Jumlah Penerbangan per Total Stops ---
@@ -125,7 +140,7 @@ function drawLineChart(data) {
     .attr("width", 600)
     .attr("height", 450);
 
-  const margin = {top: 60, right: 20, bottom: 50, left: 60};
+  const margin = {top: 60, right: 20, bottom: 70, left: 60}; // Tambah margin bottom
   const width = 600 - margin.left - margin.right;
   const height = 450 - margin.top - margin.bottom;
 
@@ -166,6 +181,21 @@ function drawLineChart(data) {
     .attr("text-anchor", "middle")
     .style("font-size", "20px")
     .text("Rata-Rata Harga Tiket Berdasarkan Durasi Penerbangan (menit)");
+
+  // Label X
+  svg.append("text")
+    .attr("x", 300)
+    .attr("y", 440)
+    .attr("text-anchor", "middle")
+    .text("Durasi (menit)");
+
+  // Label Y
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -225)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .text("Harga Rata-Rata (Rupee)");
 }
 
 // --- SCATTER PLOT: Jam Keberangkatan vs Harga ---
@@ -174,7 +204,7 @@ function drawScatterPlot(data) {
     .attr("width", 600)
     .attr("height", 450);
 
-  const margin = {top: 60, right: 20, bottom: 50, left: 60};
+  const margin = {top: 60, right: 20, bottom: 70, left: 60}; // Tambah margin bawah
   const width = 600 - margin.left - margin.right;
   const height = 450 - margin.top - margin.bottom;
 
@@ -210,4 +240,19 @@ function drawScatterPlot(data) {
     .attr("text-anchor", "middle")
     .style("font-size", "20px")
     .text("Hubungan Jam Keberangkatan dan Harga Tiket");
+
+  // Label X
+  svg.append("text")
+    .attr("x", 300)
+    .attr("y", 440)
+    .attr("text-anchor", "middle")
+    .text("Jam Keberangkatan (0-24)");
+
+  // Label Y
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -225)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .text("Harga Tiket (Rupee)");
 }
