@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Ikon kecil di tab browser (placeholder kosong) -->
+	<link rel="icon" href="data:;base64,iVBORwOKGO=" />
+	
+	<title>D3 Tutorial 3 Activity 1</title>
+
+	<!-- Menghubungkan file CSS kustom -->
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Menghubungkan Bootstrap CSS untuk gaya tombol dan tata letak -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container">
+	<!-- Judul halaman -->
+	<h2>U.S. State Drinking Patterns in 2012</h2>
+
+	<!-- Grup tombol untuk memilih jenis kelamin -->
+	<div class="btn-group" data-toggle="buttons">
+		<label class="btn btn-primary">
+			<input value="male" class="sex" type="radio" name="gender" id="genderMale" autocomplete="off"> Male
+		</label>
+		<label class="btn btn-primary active">
+			<input value="female" class="sex" type="radio" name="gender" id="genderFemale" autocomplete="off" checked> Female
+		</label>
+	</div>
+
+	<!-- Grup tombol untuk memilih jenis kebiasaan minum -->
+	<div class="btn-group" data-toggle="buttons">
+		<label class="btn btn-primary">
+			<input value="any" type="radio" name="drinkingType" id="drinkAny" autocomplete="off"> Any Drinking
+		</label>
+		<label class="btn btn-primary active">
+			<input value="binge" type="radio" name="drinkingType" id="drinkBinge" autocomplete="off" checked> Binge Drinking
+		</label>
+	</div>
+
+	<!-- Tempat untuk menampilkan visualisasi (grafik) -->
+	<div id="vis"></div>
+
+	<!-- Menghubungkan library jQuery -->
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+
+	<!-- Menghubungkan library JavaScript Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- Menghubungkan library D3.js versi 7 -->
+	<script src="js/d3.v7.min.js"></script>
+
+	<!-- Menghubungkan file JavaScript untuk membuat bar chart -->
+	<script src="js/barchart.js"></script>
+
+	<!-- Menghubungkan file JavaScript utama -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>

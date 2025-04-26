@@ -1,0 +1,10 @@
+circle {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.city-label {
+    font-size: 11px;
+    text-anchor: middle;
+    fill: black;
+}
